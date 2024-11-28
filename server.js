@@ -1,35 +1,24 @@
-import express from 'express';
+// Importamos as bibliotecas necessárias:
+import express from 'express'; // Importa o framework Express, que vamos usar para criar nossa aplicação web.
+import routes from './src/routes/postsRoutes.js';
 
-const posts = [
-    {
-        id: 1,
-        descricao: 'Uma foto teste',
-        imagem: 'https://playcats.com/millie/300/150'
-    },
-    {
-        id: 2,
-        descricao: 'Um lindo pôr do sol na praia',
-        imagem: 'https://playcats.com/millie/300/150'
-    },
-];
+
+// Cria uma aplicação Express:
 const app = express();
-app.use(express.json())
+routes(app);
 
+// Inicia o servidor na porta 3000:
 app.listen(3000, () => {
-    console.log("Servidor escutando...");
-});
-
-app.get("/posts", (req, res) => {
-    res.status(200).json(posts);
+  console.log("Servidor escutando na porta 3000!");
 });
 
 
-function BuscarPosts(Id){
-    return posts.findIndex((posts) => {
-        return posts.id === Number(Id)
-    })
-}
-app.get("/posts/:id", (req, res) => {
-    const index = BuscarPosts(req.params.id)
-    res.status(200).json(posts[index]);
-});
+// function BuscarPosts(Id){
+//     return posts.findIndex((posts) => {
+//         return posts.id === Number(Id)
+//     })
+// }
+// app.get("/posts/:id", (req, res) => {
+//     const index = BuscarPosts(req.params.id)
+//     res.status(200).json(posts[index]);
+// });
