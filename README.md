@@ -19,7 +19,7 @@ Imersão Back-end
 - Criar rotas e lidar com requisições HTTP.
 
 ### 4. **Bancos de Dados**
-- Integração com bancos de dados SQL (MySQL, PostgreSQL) e NoSQL (MongoDB).
+- Integração com bancos de dados NoSQL (MongoDB).
 - Realizar operações de leitura e escrita.
 
 ### 5. **APIs RESTful**
